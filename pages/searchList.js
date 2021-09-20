@@ -13,12 +13,9 @@ const SearchList = () => {
 
   const getBookList = () => {
     axios
-      .get(
-        `http://data4library.kr/api/srchBooks?authKey=${process.env.NEXT_PUBLIC_LIBRARY_API_KEY}&keyword=베르나르&pageNo=1&pageSize=10&format=json`,
-        {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-        }
-      )
+      .get(`http:localhost:4000/test`, {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+      })
       .then(function (res) {
         console.log(res);
       })
