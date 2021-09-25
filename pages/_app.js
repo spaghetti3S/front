@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import wrapper from '../redux/configureStore';
 import 'antd/dist/antd.css';
 
 const Spaghetti = ({ Component }) => {
@@ -23,4 +25,4 @@ Spaghetti.propTypes = {
   Component: PropTypes.elementType.isRequired,
 };
 
-export default Spaghetti;
+export default wrapper.withRedux(Spaghetti);

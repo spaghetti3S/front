@@ -42,7 +42,7 @@ const SearchList = () => {
         <TabPane tab="검색" key="1">
           검색 결과입니다.
           <p>{link.title}</p>
-          <button onClick={updateList} value="버튼"></button>
+          <button onClick={updateList}>버튼</button>
           {a}
         </TabPane>
         <TabPane tab="추천받기" key="2">
