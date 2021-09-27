@@ -16,10 +16,11 @@ function loadBooksAPI() {
 function* loadBooks() {
   try {
     const result = yield call(loadBooksAPI);
+    console.log(result.data);
     yield delay(1000);
     yield put({
       type: SEARCH_BOOKS_SUCCESS,
-      data: result.data,
+      data: result.data.response.docs,
     });
   } catch (err) {
     console.error(err);
