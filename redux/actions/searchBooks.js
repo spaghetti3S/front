@@ -5,6 +5,6 @@ export const SEARCH_BOOKS_FAILURE = 'SEARCH_BOOKS_FAILURE ';
 export const searchBooks = (data) => {
   return {
     type: SEARCH_BOOKS_REQUEST,
-    data,
+    keyword: data,
   };
 };

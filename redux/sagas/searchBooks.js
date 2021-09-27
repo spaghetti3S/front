@@ -7,16 +7,16 @@ import {
   SEARCH_BOOKS_SUCCESS,
 } from '../actions/searchBooks';
 
-function loadBooksAPI() {
-  return axios.get(`http://localhost:4000/test`, {
+function loadBooksAPI(keyword) {
+  return axios.get(`http://localhost:4000/search/${keyword}`, {
     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
   });
 }
 
-function* loadBooks() {
+function* loadBooks(action) {
   try {
-    const result = yield call(loadBooksAPI);
-    console.log(result.data);
+    const result = yield call(loadBooksAPI, action.keyword);
+    console.log(result);
     yield delay(1000);
     yield put({
       type: SEARCH_BOOKS_SUCCESS,
