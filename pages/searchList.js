@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
-import { Tabs } from 'antd';
-import allAction from '../redux/actions';
+import { Row, Col } from 'antd';
 
+import allAction from '../redux/actions';
 import AppLayout from '../components/AppLayout';
 import BookInfoCard from '../components/BookInfoCard';
 
 const SearchList = () => {
   const dispatch = useDispatch();
-  const { TabPane } = Tabs;
 
+  const getRedux = (keyword) => {
+    dispatch(allAction.searchBooks(keyword));
+  };
   // 스토어에서 검색 결과 가져옴
   const searchbooks = useSelector((state) => state.searchBooks);
   // 검색 키워드 URL 에서 가져옴
@@ -21,27 +23,17 @@ const SearchList = () => {
     getRedux(link.title);
   }, []);
 
-  const getRedux = (keyword) => {
-    dispatch(allAction.searchBooks(keyword));
-  };
-
-  console.log(searchbooks);
   return (
     <AppLayout>
-      <Tabs type="card">
-        <TabPane tab="검색" key="1">
-          검색 결과입니다.
-          <p>{link.title}</p>
-          <div>
-            {searchbooks.map((book) => (
+      <div>
+        <Row>
+          {searchbooks.map((book) => (
+            <Col>
               <BookInfoCard book={book} />
-            ))}
-          </div>
-        </TabPane>
-        <TabPane tab="추천받기" key="2">
-          책 추천 받기
-        </TabPane>
-      </Tabs>
+            </Col>
+          ))}
+        </Row>
+      </div>
     </AppLayout>
   );
 };

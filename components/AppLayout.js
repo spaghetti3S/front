@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Layout } from 'antd';
+import SearchBar from './SearchBar';
 
 const { Header, Footer, Content } = Layout;
 
@@ -14,6 +15,7 @@ const AppLayout = ({ children }) => {
         </Link>
       </Header>
       <Content>
+        <SearchBar />
         <div className="content">{children}</div>
       </Content>
       <Footer>Footer</Footer>
