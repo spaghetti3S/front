@@ -16,7 +16,9 @@ const BookInfoCard = ({ book }) => {
 };
 
 BookInfoCard.propTypes = {
-  book: PropTypes.element.isRequired,
+  book: PropTypes.shape({
+    doc: PropTypes.objectOf(PropTypes.string),
+  }).isRequired,
 };
 
 export default BookInfoCard;

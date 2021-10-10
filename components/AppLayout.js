@@ -23,7 +23,8 @@ const AppLayout = ({ children }) => {
   );
 };
 AppLayout.propTypes = {
-  children: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
 export default AppLayout;

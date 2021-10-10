@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import { Provider } from 'react-redux';
 import wrapper from '../redux/configureStore';
 import 'antd/dist/antd.css';
 

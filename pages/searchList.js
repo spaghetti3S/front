@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col } from 'antd';
 
 import allAction from '../redux/actions';
 import AppLayout from '../components/AppLayout';
@@ -26,13 +25,9 @@ const SearchList = () => {
   return (
     <AppLayout>
       <div>
-        <Row>
-          {searchbooks.map((book) => (
-            <Col>
-              <BookInfoCard book={book} />
-            </Col>
-          ))}
-        </Row>
+        {searchbooks.map((book) => (
+          <BookInfoCard key={book.doc.isbn13} book={book} />
+        ))}
       </div>
     </AppLayout>
   );

@@ -16,7 +16,6 @@ function loadBooksAPI(keyword) {
 function* loadBooks(action) {
   try {
     const result = yield call(loadBooksAPI, action.keyword);
-    console.log(result);
     yield delay(1000);
     yield put({
       type: SEARCH_BOOKS_SUCCESS,
