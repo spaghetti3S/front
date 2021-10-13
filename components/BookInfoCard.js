@@ -25,6 +25,7 @@ const BookInfoCard = ({ book }) => {
 
   return (
     <div>
+      {}
       <Card>
         <Image width={150} src={image} />
         <Meta title={book.doc.bookname} description={book.doc.authors} />
