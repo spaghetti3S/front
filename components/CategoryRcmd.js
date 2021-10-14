@@ -19,6 +19,10 @@ const CategoryRcmd = () => {
       });
   };
 
+  const test = () => {
+    console.log('안녕');
+  };
+
   useEffect(() => {
     getBooksList(83);
   }, []);
@@ -30,10 +34,16 @@ const CategoryRcmd = () => {
           <TabPane tab="아라비아" key="1">
             {bookList &&
               bookList.map((book) => {
-                return <BookInfoCard key={book.doc.isbn13} book={book} />;
+                return (
+                  <BookInfoCard
+                    type="image"
+                    key={book.doc.isbn13}
+                    book={book}
+                  />
+                );
               })}
           </TabPane>
-          <TabPane tab="아라비아" key="2">
+          <TabPane tab="아라비아" key="2" onClick={test()}>
             1234
           </TabPane>
           <TabPane tab="아라비아" key="3">
