@@ -10,7 +10,7 @@ const SearchList = () => {
   const dispatch = useDispatch();
 
   const getRedux = (keyword) => {
-    dispatch(allAction.searchBooks(keyword));
+    dispatch(allAction.searchMainCategoryBookList(keyword));
   };
   // 스토어에서 검색 결과 가져옴
   const searchbooks = useSelector((state) => state.searchBooks);

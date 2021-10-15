@@ -2,6 +2,7 @@ import { HYDRATE } from 'next-redux-wrapper';
 import { combineReducers } from 'redux';
 
 import searchBooks from './searchBooksReducer';
+import mainCategory from './getMainCategoryBooksReducer';
 
 const rootReducer = combineReducers({
   index: (state = {}, action) => {
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
     }
   },
   searchBooks,
+  mainCategory,
 });
 
 export default rootReducer;
