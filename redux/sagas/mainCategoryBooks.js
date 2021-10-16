@@ -16,7 +16,6 @@ function loadBooksAPI(kdc) {
 function* loadBooks(action) {
   try {
     const result = yield call(loadBooksAPI, action.kdc);
-    yield delay(1000);
     yield put({
       type: SEARCH_MAIN_BOOKS_SUCCESS,
       data: result.data.response.docs,
