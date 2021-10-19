@@ -26,7 +26,7 @@ const SearchList = () => {
     <AppLayout>
       <div>
         {searchbooks.map((book) => (
-          <BookInfoCard type="search" key={book.doc.isbn13} book={book} />
+          <BookInfoCard type="search" key={book.doc.no} book={book} />
         ))}
       </div>
     </AppLayout>

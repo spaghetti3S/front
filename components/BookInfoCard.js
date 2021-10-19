@@ -26,8 +26,8 @@ const BookInfoCard = ({ book, type }) => {
   return (
     <span>
       {type === 'image' && (
-        <Card>
-          <Image width={150} src={image} />
+        <Card style={{ height: 200 }}>
+          <Image width={100} src={image} />
         </Card>
       )}
       {type === 'search' && (
@@ -44,7 +44,9 @@ const BookInfoCard = ({ book, type }) => {
 
 BookInfoCard.propTypes = {
   book: PropTypes.shape({
-    doc: PropTypes.objectOf(PropTypes.string),
+    doc: PropTypes.objectOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    ),
   }).isRequired,
   type: PropTypes.string.isRequired,
 };
