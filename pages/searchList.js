@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
+import { Image } from 'antd';
 
 import allAction from '../redux/actions';
 import AppLayout from '../components/AppLayout';
@@ -26,7 +27,7 @@ const SearchList = () => {
     <AppLayout>
       <div>
         {searchbooks.map((book) => (
-          <BookInfoCard type="search" key={book.doc.no} book={book} />
+          <Image src={book.coverLargeUrl} />
         ))}
       </div>
     </AppLayout>

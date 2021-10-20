@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { LeftSquareFilled, RightSquareFilled } from '@ant-design/icons';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'antd';
+import { Row, Col, Image } from 'antd';
 import axios from 'axios';
 
 import BookInfoCard from './BookInfoCard';
@@ -16,19 +16,19 @@ const BookList = ({ code }) => {
   const pageDown = () => {
     setPage(page - 1);
   };
-
-  const getBookList = async () => {
+  // .data.item -> Array 반환
+  const getBestseller = async () => {
     await axios
-      .get(`http://localhost:4000/books/${code}`, {
+      .get(`http://localhost:4000/books/bestseller/${code}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {
-        setBookList(res.data.response.docs);
+        setBookList(res.data.item);
       });
   };
 
   useEffect(() => {
-    getBookList();
+    getBestseller();
   }, []);
 
   return (
@@ -41,12 +41,12 @@ const BookList = ({ code }) => {
       {bookList &&
         bookList.slice(5 * page, 5 * (page + 1)).map((book) => {
           return (
-            <Col key={book.doc.no}>
-              <BookInfoCard type="image" book={book} key={book.doc.no} />
+            <Col key={book.isbn}>
+              <Image src={book.coverLargeUrl} />
             </Col>
           );
         })}
-      {page !== 2 && (
+      {page !== bookList.length / 5 - 1 && (
         <Col>
           <RightSquareFilled onClick={pageUp} />
         </Col>

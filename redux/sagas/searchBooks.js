@@ -8,9 +8,12 @@ import {
 } from '../actions/searchBooks';
 
 function loadBooksAPI(keyword) {
-  return axios.get(`http://localhost:4000/search/${keyword}`, {
-    'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-  });
+  return axios.get(
+    `http://localhost:4000/book/search/title?keyword=${keyword}`,
+    {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+    }
+  );
 }
 
 function* loadBooks(action) {
@@ -19,7 +22,7 @@ function* loadBooks(action) {
     // yield delay(1000);
     yield put({
       type: SEARCH_BOOKS_SUCCESS,
-      data: result.data.response.docs,
+      data: result.data.item,
     });
   } catch (err) {
     console.error(err);
