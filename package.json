@@ -25,7 +25,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "css": "sass --no-source-map --watch style.scss style.css"
   },
   "eslintConfig": {
     "extends": [

@@ -1,12 +1,14 @@
 import React from 'react';
 
 import AppLayout from '../components/AppLayout';
-import CategoryRcmd from '../components/CategoryRcmd';
+import Bestseller from '../components/Bestseller';
 
 const Home = () => {
   return (
     <AppLayout>
-      <CategoryRcmd />
+      <>
+        <Bestseller />
+      </>
     </AppLayout>
   );
 };

@@ -5,7 +5,6 @@ import { Image } from 'antd';
 
 import allAction from '../redux/actions';
 import AppLayout from '../components/AppLayout';
-import BookInfoCard from '../components/BookInfoCard';
 
 const SearchList = () => {
   const dispatch = useDispatch();

@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import { Row, Col, Image } from 'antd';
 import axios from 'axios';
 
-import BookInfoCard from './BookInfoCard';
-
 const BookList = ({ code }) => {
   const [bookList, setBookList] = useState([]);
   const [page, setPage] = useState(0);
@@ -56,7 +54,7 @@ const BookList = ({ code }) => {
 };
 
 BookList.propTypes = {
-  code: PropTypes.string.isRequired,
+  code: PropTypes.number.isRequired,
 };
 
 export default BookList;

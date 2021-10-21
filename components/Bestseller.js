@@ -16,11 +16,14 @@ const CategoryRcmd = () => {
   };
 
   return (
-    <Tabs defaultActiveKey="100" centered>
-      {dtl.category.map((categoryInfo) => {
-        return makeMenu(categoryInfo[0], categoryInfo[1]);
-      })}
-    </Tabs>
+    <div>
+      <div id="font_list">서점 베스트셀러 </div>
+      <Tabs defaultActiveKey="100" centered>
+        {dtl.category.map((categoryInfo) => {
+          return makeMenu(categoryInfo[0], categoryInfo[1]);
+        })}
+      </Tabs>
+    </div>
   );
 };
 
