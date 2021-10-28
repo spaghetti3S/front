@@ -3,4 +3,8 @@
   font-size: 30px;
 }
 
-/*# sourceMappingURL=style.css.map */
+#Book:hover {
+  transition: 0.5s;
+  filter: brightness(50%);
+  cursor: pointer;
+}

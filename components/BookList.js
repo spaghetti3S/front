@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { LeftSquareFilled, RightSquareFilled } from '@ant-design/icons';
 import PropTypes from 'prop-types';
-import { Row, Col, Image } from 'antd';
+import { Row, Col } from 'antd';
 import axios from 'axios';
+
+import BookImage from './BookImage';
 
 const BookList = ({ code }) => {
   const [bookList, setBookList] = useState([]);
@@ -40,7 +42,7 @@ const BookList = ({ code }) => {
         bookList.slice(5 * page, 5 * (page + 1)).map((book) => {
           return (
             <Col key={book.isbn}>
-              <Image src={book.coverLargeUrl} />
+              <BookImage imgLink={book.coverLargeUrl} isbn={book.isbn} />
             </Col>
           );
         })}

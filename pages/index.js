@@ -9,6 +9,7 @@ const Home = () => {
     <AppLayout>
       <>
         <Bestseller />
+        <br />
         <NewBooks />
       </>
     </AppLayout>

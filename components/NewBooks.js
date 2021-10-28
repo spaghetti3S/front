@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Image } from 'antd';
+import { Row, Col } from 'antd';
+
+import BookImage from './BookImage';
 
 const NewBooks = () => {
   const [bookList, setBookList] = useState([]);
@@ -21,10 +23,14 @@ const NewBooks = () => {
 
   return (
     <div>
-      <div id="font_list">신간 도서</div>
-      {bookList.slice(0, 5).map((book) => (
-        <Image src={book.coverLargeUrl} />
-      ))}
+      <div id="font_list">추천 소설 책</div>
+      <Row>
+        {bookList.slice(0, 5).map((book) => (
+          <Col key={book.isbn}>
+            <BookImage imgLink={book.coverLargeUrl} isbn={book.isbn} />
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };
