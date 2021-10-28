@@ -1,0 +1,10 @@
+#font_list {
+  font-family: 'Jua', sans-serif;
+  font-size: 30px;
+}
+
+#Book:hover {
+  transition: 0.5s;
+  filter: brightness(50%);
+  cursor: pointer;
+}

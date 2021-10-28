@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
+import { Image } from 'antd';
 
 import allAction from '../redux/actions';
 import AppLayout from '../components/AppLayout';
-import BookInfoCard from '../components/BookInfoCard';
 
 const SearchList = () => {
   const dispatch = useDispatch();
 
   const getRedux = (keyword) => {
-    dispatch(allAction.searchBooks(keyword));
+    dispatch(allAction.searchMainCategoryBookList(keyword));
   };
   // 스토어에서 검색 결과 가져옴
   const searchbooks = useSelector((state) => state.searchBooks);
@@ -26,7 +26,7 @@ const SearchList = () => {
     <AppLayout>
       <div>
         {searchbooks.map((book) => (
-          <BookInfoCard key={book.doc.isbn13} book={book} />
+          <Image src={book.coverLargeUrl} />
         ))}
       </div>
     </AppLayout>
