@@ -3,6 +3,24 @@
   font-size: 30px;
 }
 
+#font_info {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+#font_title {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#split {
+  color: gray;
+  font-size: 17px;
+}
+
+#font_year {
+  font-weight: bold;
+}
+
 #Book:hover {
   transition: 0.5s;
   filter: brightness(50%);
@@ -24,7 +42,4 @@
   backdrop-filter: blur(10px);
   display: grid;
   place-items: center;
-}
-
-#BookCoverLayoutWrapper #cover {
 }

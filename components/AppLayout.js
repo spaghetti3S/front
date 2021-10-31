@@ -14,7 +14,7 @@ const AppLayout = ({ children }) => {
           <a href="{() => false}">홈이동</a>
         </Link>
       </Header>
-      <Content>
+      <Content style={{ backgroundColor: 'white' }}>
         <SearchBar />
         <div className="content">{children}</div>
       </Content>
