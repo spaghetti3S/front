@@ -8,3 +8,23 @@
   filter: brightness(50%);
   cursor: pointer;
 }
+
+#BookCoverLayout {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#BookCoverLayout #blur {
+  height: 600px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  display: grid;
+  place-items: center;
+}
+
+#BookCoverLayout #cover {
+}
