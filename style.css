@@ -75,3 +75,7 @@
   display: flex;
   overflow-x: scroll;
 }
+
+#relevence_book_wrapper::-webkit-scrollbar {
+  display: none;
+}

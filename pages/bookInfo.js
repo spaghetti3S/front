@@ -9,8 +9,8 @@ import BookLibraryInfo from '../components/BookLibraryInfo';
 import BookRelevenceList from '../components/BookRelevenceList';
 
 const BookInfo = () => {
-  const [book, setBook] = useState({ coverLargeUrl: '', pubDate: '0000' });
-  const [libraryBookInfo, setlibraryBookInfo] = useState([{ Total: '' }]);
+  const [book, setBook] = useState();
+  const [libraryBookInfo, setlibraryBookInfo] = useState();
   const [writer, setWriter] = useState('');
 
   // 검색 키워드 URL 에서 가져옴
@@ -27,9 +27,9 @@ const BookInfo = () => {
         console.log(res.data.item[0]);
       });
   };
-  const getBooksInfoLibrary = async (isbn) => {
+  const getBooksInfoLibrary = async () => {
     await axios
-      .get(`http://localhost:4000/book/library/${isbn}`, {
+      .get(`http://localhost:4000/book/library/${link.isbn}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {
@@ -42,13 +42,13 @@ const BookInfo = () => {
   useEffect(() => {
     getBooksInfo(link.isbn);
     getBooksInfoLibrary(link.isbn);
-  }, []);
+  }, [link.isbn]);
 
   return (
     <AppLayout>
-      <BookCoverLayout imgLink={book.coverLargeUrl} />
+      <BookCoverLayout imgLink={book && book.coverLargeUrl} />
       <div>
-        <BookDescription book={book} writer={writer} />
+        {book && <BookDescription book={book} writer={writer} />}
         <BookLibraryInfo book={libraryBookInfo} />
       </div>
       <div style={{ clear: 'left' }}>
