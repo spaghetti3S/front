@@ -5,10 +5,13 @@ import React, { useEffect, useState } from 'react';
 import AppLayout from '../components/AppLayout';
 import BookCoverLayout from '../components/BookCoverLayout';
 import BookDescription from '../components/BookDescription';
+import BookLibraryInfo from '../components/BookLibraryInfo';
+import BookRelevenceList from '../components/BookRelevenceList';
 
 const BookInfo = () => {
   const [book, setBook] = useState({ coverLargeUrl: '', pubDate: '0000' });
-  const [libraryBookInfo, setlibraryBookInfo] = useState({});
+  const [libraryBookInfo, setlibraryBookInfo] = useState([{ Total: '' }]);
+  const [writer, setWriter] = useState('');
 
   // 검색 키워드 URL 에서 가져옴
   const router = useRouter();
@@ -30,6 +33,8 @@ const BookInfo = () => {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {
+        setlibraryBookInfo(res.data.response.loanInfo);
+        setWriter(res.data.response.detail[0].book.authors);
         console.log(res.data.response);
       });
   };
@@ -43,7 +48,11 @@ const BookInfo = () => {
     <AppLayout>
       <BookCoverLayout imgLink={book.coverLargeUrl} />
       <div>
-        <BookDescription book={book} />
+        <BookDescription book={book} writer={writer} />
+        <BookLibraryInfo book={libraryBookInfo} />
+      </div>
+      <div style={{ clear: 'left' }}>
+        <BookRelevenceList code={link.isbn} />
       </div>
     </AppLayout>
   );

@@ -1,10 +1,14 @@
 import React from 'react';
 
-const BookDescription = ({ book }) => {
+const BookDescription = ({ book, writer }) => {
   return (
-    <div id="font_info" style={{ width: '60%', margin: '20px' }}>
+    <div
+      className="description"
+      id="font_info"
+      style={{ width: '60%', margin: '20px' }}
+    >
       <div id="font_title">{book.title}</div>
-      {book.author}
+      {book.author ? book.author : writer.split(';')[0].replace(' 지음', '')}
       <span id="split" style={{ margin: '10px' }}>
         |
       </span>

@@ -7,11 +7,11 @@ import NewBooks from '../components/NewBooks';
 const Home = () => {
   return (
     <AppLayout>
-      <>
+      <div style={{ margin: '20px 5%' }}>
         <Bestseller />
         <br />
         <NewBooks />
-      </>
+      </div>
     </AppLayout>
   );
 };

@@ -21,6 +21,11 @@
   font-weight: bold;
 }
 
+#Book {
+  width: 170px;
+  height: 240px;
+}
+
 #Book:hover {
   transition: 0.5s;
   filter: brightness(50%);
@@ -39,7 +44,34 @@
 #BookCoverLayoutWrapper #blur {
   height: 600px;
   width: 100%;
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(15px);
   display: grid;
   place-items: center;
+}
+
+.description {
+  float: left;
+}
+.libraryInfo {
+  width: 30%;
+  float: right;
+  margin: 20px;
+}
+
+.sliderWrapper {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.sliderWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#relevence_book_wrapper {
+  width: 100%;
+  height: auto;
+  margin-top: 300px;
+  background-color: #f0f8ff;
+  display: flex;
+  overflow-x: scroll;
 }
