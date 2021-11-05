@@ -79,3 +79,15 @@
 #relevence_book_wrapper::-webkit-scrollbar {
   display: none;
 }
+
+#map {
+  float: left;
+}
+
+#libraryInfo {
+  float: right;
+}
+
+#libraryLayout {
+  padding: 50px 20px;
+}

@@ -14,7 +14,6 @@ const BookRelevenceList = ({ code }) => {
         if (res.data.docs) {
           console.log(res.data.docs.slice(0, 10));
           setBooks(res.data.docs.slice(0, 10));
-          return res.data.docs[0].book;
         }
       });
   };

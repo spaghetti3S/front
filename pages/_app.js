@@ -9,7 +9,7 @@ const Spaghetti = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>Spaghetti</title>
+        <title>ㅊㅐㄱ도날ㅡ</title>
         {/* antdesign */}
         <link
           rel="stylesheet"
@@ -33,6 +33,14 @@ const Spaghetti = ({ Component, pageProps }) => {
           href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"
           rel="stylesheet"
         ></link>
+        <script
+          type="text/javascript"
+          src={
+            '//dapi.kakao.com/v2/maps/sdk.js?appkey=' +
+            process.env.KAKAO_MAP_KEY
+          }
+        ></script>
+        ;
       </Head>
       <Component {...pageProps} />
     </>

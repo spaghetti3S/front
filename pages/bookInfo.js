@@ -7,6 +7,8 @@ import BookCoverLayout from '../components/BookCoverLayout';
 import BookDescription from '../components/BookDescription';
 import BookLibraryInfo from '../components/BookLibraryInfo';
 import BookRelevenceList from '../components/BookRelevenceList';
+import KakaoMap from '../components/KakaoMap';
+import LibraryInfoLayout from '../components/LibraryInfoLayout';
 
 const BookInfo = () => {
   const [book, setBook] = useState();
@@ -46,13 +48,19 @@ const BookInfo = () => {
 
   return (
     <AppLayout>
-      <BookCoverLayout imgLink={book && book.coverLargeUrl} />
-      <div>
-        {book && <BookDescription book={book} writer={writer} />}
-        <BookLibraryInfo book={libraryBookInfo} />
-      </div>
-      <div style={{ clear: 'left' }}>
-        <BookRelevenceList code={link.isbn} />
+      <div style={{ width: '90%' }}>
+        <BookCoverLayout imgLink={book && book.coverLargeUrl} />
+        <div>
+          {book && <BookDescription book={book} writer={writer} />}
+          <BookLibraryInfo book={libraryBookInfo} />
+        </div>
+        <div style={{ clear: 'left' }}>
+          <BookRelevenceList code={link.isbn} />
+        </div>
+        <div id="libraryLayout">
+          <KakaoMap />
+          <LibraryInfoLayout />
+        </div>
       </div>
     </AppLayout>
   );
