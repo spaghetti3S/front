@@ -26,7 +26,7 @@ const SearchList = () => {
     <AppLayout>
       <div>
         {searchbooks.map((book) => (
-          <BookImage src={book.coverLargeUrl} />
+          <BookImage isbn={book.isbn} />
         ))}
       </div>
     </AppLayout>

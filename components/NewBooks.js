@@ -6,7 +6,7 @@ import BookImage from './BookImage';
 
 const NewBooks = () => {
   const [bookList, setBookList] = useState([]);
-  const code = 101;
+  const code = 118;
   const getNewBooks = async () => {
     await axios
       .get(`http://localhost:4000/books/newBooks/${code}`, {
@@ -23,9 +23,9 @@ const NewBooks = () => {
 
   return (
     <div>
-      <div id="font_list">추천 소설 책</div>
+      <div id="font_list">추천 자기계발 책</div>
       <Row>
-        {bookList.slice(0, 5).map((book) => (
+        {bookList.slice(0, 6).map((book) => (
           <Col key={book.isbn}>
             <BookImage imgLink={book.coverLargeUrl} isbn={book.isbn} />
           </Col>

@@ -8,8 +8,6 @@ const BookImage = ({ isbn, state }) => {
   const [bookImg, setBookImg] = useState('');
 
   // 검색 키워드 URL 에서 가져옴
-  const router = useRouter();
-  const link = router.query;
   const getBookImage = async (code) => {
     await axios
       .get(`http://localhost:4000/book/search/isbn?keyword=${code}`, {

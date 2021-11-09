@@ -9,7 +9,7 @@ const Spaghetti = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>ㅊㅐㄱ도날ㅡ</title>
+        <title>Spaghetti</title>
         {/* antdesign */}
         <link
           rel="stylesheet"
