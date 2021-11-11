@@ -91,3 +91,10 @@
 #libraryLayout {
   padding: 50px 20px;
 }
+
+.infowindow {
+}
+
+.infowindow #name {
+  text-align: center;
+}
