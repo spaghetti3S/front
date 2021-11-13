@@ -3,8 +3,98 @@
   font-size: 30px;
 }
 
+#font_info {
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+#font_title {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#split {
+  color: gray;
+  font-size: 17px;
+}
+
+#font_year {
+  font-weight: bold;
+}
+
+#Book {
+  width: 170px;
+  height: 240px;
+}
+
 #Book:hover {
   transition: 0.5s;
   filter: brightness(50%);
   cursor: pointer;
+}
+
+#BookCoverLayoutWrapper {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#BookCoverLayoutWrapper #blur {
+  height: 600px;
+  width: 100%;
+  -webkit-backdrop-filter: blur(15px);
+  display: grid;
+  place-items: center;
+}
+
+.description {
+  float: left;
+}
+.libraryInfo {
+  width: 30%;
+  float: right;
+  margin: 20px;
+}
+
+.sliderWrapper {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.sliderWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#relevence_book_wrapper {
+  width: 100%;
+  height: auto;
+  margin-top: 300px;
+  background-color: #f0f8ff;
+  display: flex;
+  overflow-x: scroll;
+}
+
+#relevence_book_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#map {
+  float: left;
+}
+
+#libraryInfo {
+  float: right;
+}
+
+#libraryLayout {
+  padding: 50px 20px;
+}
+
+.infowindow {
+}
+
+.infowindow #name {
+  text-align: center;
 }
