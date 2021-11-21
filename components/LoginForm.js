@@ -16,19 +16,27 @@ const LoginForm = () => {
         if (err || res.data.code === 400) {
           alert('아이디와 비밀번호를 확인해주세요.');
         } else {
-          window.localStorage.setItem('userId', res.data.cookie.user.userId);
+          window.localStorage.setItem('token', res.data.token);
           Router.push('/');
         }
       });
   };
 
   return (
-    <div style={{ margin: '50% 30px' }}>
+    <div
+      style={{
+        height: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <Form
         name="normal_login"
         className="login-form"
         initialValues={{ remember: true }}
         onFinish={loginReq}
+        style={{ width: '250px' }}
       >
         <Form.Item
           name="userId"

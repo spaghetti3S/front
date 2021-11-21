@@ -39,10 +39,21 @@ const BookInfo = () => {
         console.log(res.data.response);
       });
   };
+  // 로그인 정보 가져옴
+  const checkLogin = async () => {
+    await axios
+      .post(`http://localhost:4000/user/sessionCheck`, {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+      })
+      .then((res) => {
+        console.log(res.data.sessionExist);
+      });
+  };
 
   useEffect(() => {
     getBooksInfo(link.isbn);
     getBooksInfoLibrary(link.isbn);
+    checkLogin();
   }, [link.isbn]);
 
   return (
