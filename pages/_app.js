@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import wrapper from '../redux/configureStore';
+
 import '../style.css';
 import 'antd/dist/antd.css';
 /* eslint-disable react/jsx-props-no-spreading */

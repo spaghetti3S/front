@@ -16,6 +16,7 @@ const LoginForm = () => {
         if (err || res.data.code === 400) {
           alert('아이디와 비밀번호를 확인해주세요.');
         } else {
+          window.localStorage.setItem('userId', val.userId);
           window.localStorage.setItem('token', res.data.token);
           Router.push('/');
         }

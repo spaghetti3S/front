@@ -115,3 +115,26 @@
   top: 20%;
   left: 20%;
 }
+
+#mypage {
+  width: 900px;
+  height: 1000px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mypageWrapper {
+  width: 60%;
+  height: 70%;
+  border-radius: 10%;
+  background-color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table#userInfoTable {
+  width: 500px;
+}
