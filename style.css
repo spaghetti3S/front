@@ -133,8 +133,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 table#userInfoTable {
-  width: 500px;
+  width: 200px;
+  margin-bottom: 20px;
 }

@@ -7,7 +7,7 @@ import {
   LOGIN_USER_SUCCESS,
 } from '../actions/user';
 
-function loginUserAPI(keyword) {
+function loginUserAPI(inputInfo) {
   return axios
     .post(`http://localhost:4000/user/login`, {
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
