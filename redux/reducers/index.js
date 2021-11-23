@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 
 import searchBooks from './searchBooksReducer';
 import mainCategory from './getMainCategoryBooksReducer';
+import loginUser from './user';
 
 const rootReducer = combineReducers({
   index: (state = {}, action) => {
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   },
   searchBooks,
   mainCategory,
+  loginUser,
 });
 
 export default rootReducer;

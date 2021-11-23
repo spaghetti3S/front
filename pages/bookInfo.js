@@ -25,7 +25,6 @@ const BookInfo = () => {
       })
       .then((res) => {
         setBook(res.data.item[0]);
-        console.log(res.data.item[0]);
       });
   };
   const getBooksInfoLibrary = async () => {
@@ -36,7 +35,6 @@ const BookInfo = () => {
       .then((res) => {
         setlibraryBookInfo(res.data.response.loanInfo);
         setWriter(res.data.response.detail[0].book.authors);
-        console.log(res.data.response);
       });
   };
 
