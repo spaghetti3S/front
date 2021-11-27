@@ -163,3 +163,8 @@ table#userInfoTable {
   grid-template-rows: repeat(3, 300px);
   grid-template-columns: repeat(4, 200px);
 }
+
+#pageButton {
+  font-size: 33px;
+  color: darkgrey;
+}
