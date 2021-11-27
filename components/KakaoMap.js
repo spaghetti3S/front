@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 
-const { kakao } = window;
-
 const KakaoMap = ({ isbn }) => {
   // 인포 윈도우
   const createInfowindow = async (lib, map, marker) => {
@@ -79,6 +77,7 @@ const KakaoMap = ({ isbn }) => {
   };
 
   useEffect(() => {
+    const { kakao } = window;
     // 지도 띄우기
     const container = document.getElementById('map');
     const options = {
