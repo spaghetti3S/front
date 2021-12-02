@@ -35,7 +35,6 @@ const BookInfo = () => {
       })
       .then((res) => {
         setlibraryBookInfo(res.data.response.loanInfo);
-        setWriter(res.data.response.detail[0].book.authors);
       });
   };
 
@@ -49,7 +48,7 @@ const BookInfo = () => {
       <div>
         <BookCoverLayout imgLink={book && book.coverLargeUrl} />
         <div>
-          {book && <BookDescription book={book} writer={writer} />}
+          {book && <BookDescription book={book} writer={book.author} />}
           <div className="libraryInfo">
             <BookInfoButton isbn={link.isbn} />
             <BookLibraryInfo book={libraryBookInfo} />

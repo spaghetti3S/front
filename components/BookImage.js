@@ -1,21 +1,22 @@
 // @flow
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Router, { useRouter } from 'next/router';
+import Router from 'next/router';
 import axios from 'axios';
 
 const BookImage = ({ isbn, state }) => {
   const [bookImg, setBookImg] = useState('');
 
   // 검색 키워드 URL 에서 가져옴
-  const router = useRouter();
-  const link = router.query;
   const getBookImage = async (code) => {
     await axios
       .get(`http://localhost:4000/book/search/isbn?keyword=${code}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
-      .then((res) => {
+      .then((res, err) => {
+        if (err) {
+          setBookImg('http://image.yes24.com/goods/102347474/XL');
+        }
         setBookImg(res.data.item[0].coverLargeUrl);
       });
   };

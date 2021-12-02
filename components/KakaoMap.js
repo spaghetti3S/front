@@ -10,6 +10,7 @@ const KakaoMap = ({ isbn }) => {
       })
       .then((res) => {
         let infowindow = '';
+        console.log(res.data);
         if (
           res.data.result.hasBook === 'N' ||
           res.data.result.loanAvailable === 'N'

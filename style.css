@@ -168,3 +168,8 @@ table#userInfoTable {
   font-size: 33px;
   color: darkgrey;
 }
+
+#searchList {
+  display: flex;
+  flex-flow: wrap;
+}
