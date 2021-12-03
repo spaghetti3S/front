@@ -8,6 +8,7 @@ import BookDescription from '../components/BookDescription';
 import BookLibraryInfo from '../components/BookLibraryInfo';
 import BookRelevenceList from '../components/BookRelevenceList';
 import KakaoMap from '../components/KakaoMap';
+import BookInfoButton from '../components/BookInfoButton';
 
 const BookInfo = () => {
   const [book, setBook] = useState();
@@ -34,7 +35,6 @@ const BookInfo = () => {
       })
       .then((res) => {
         setlibraryBookInfo(res.data.response.loanInfo);
-        setWriter(res.data.response.detail[0].book.authors);
       });
   };
 
@@ -48,8 +48,11 @@ const BookInfo = () => {
       <div>
         <BookCoverLayout imgLink={book && book.coverLargeUrl} />
         <div>
-          {book && <BookDescription book={book} writer={writer} />}
-          <BookLibraryInfo book={libraryBookInfo} />
+          {book && <BookDescription book={book} writer={book.author} />}
+          <div className="libraryInfo">
+            <BookInfoButton isbn={link.isbn} />
+            <BookLibraryInfo book={libraryBookInfo} />
+          </div>
         </div>
         <div style={{ clear: 'left' }}>
           <BookRelevenceList code={link.isbn} />
