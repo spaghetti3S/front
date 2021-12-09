@@ -19,6 +19,7 @@ const KakaoMap = ({ isbn }) => {
               content: `<div class="infowindow">
               <h4 id="name">${lib.libName}</h4>
               대출 불가
+              <a href=${lib.homepage}>홈페이지</a>
             </div>`,
               removable: true,
             });
@@ -27,6 +28,7 @@ const KakaoMap = ({ isbn }) => {
               content: `<div class="infowindow">
               <h4 id="name">${lib.libName}</h4>
               대출 가능
+              <a href=${lib.homepage}>홈페이지</a>
             </div>`,
               removable: true,
             });

@@ -60,7 +60,7 @@
 
 .sliderWrapper {
   display: flex;
-  overflow-x: scroll;
+  overflow: hidden;
 }
 
 .sliderWrapper::-webkit-scrollbar {

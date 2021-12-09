@@ -25,7 +25,7 @@ const NewBooks = ({ title, code }) => {
         {title}
       </div>
       <div className="sliderWrapper">
-        {bookList.slice(0, 6).map((book) => (
+        {bookList.slice(0, 10).map((book) => (
           <BookImage imgLink={book.coverLargeUrl} isbn={book.isbn} />
         ))}
       </div>
