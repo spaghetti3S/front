@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Router } from 'next/router';
+import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { InputNumber, Radio, Button } from 'antd';
 
@@ -9,7 +9,7 @@ const ReviseUserInfo = () => {
   const [age, setAge] = useState(0);
 
   const getUserInfo = async () => {
-    axios
+    await axios
       .post(`http://localhost:4000/user/info`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         token: window.localStorage.getItem('token'),
@@ -24,6 +24,28 @@ const ReviseUserInfo = () => {
           setUser(res.data.data);
           setSex(res.data.data.sex);
           setAge(res.data.data.age);
+        }
+      });
+  };
+
+  const submitRevise = async () => {
+    await axios
+      .post(`http://localhost:4000/user/revise`, {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        token: window.localStorage.getItem('token'),
+        userId: window.localStorage.getItem('userId'),
+        RSex: sex,
+        RAge: age,
+      })
+      .then((res, err) => {
+        if (err || res.data.code === 400) {
+          alert('로그인이 필요합니다.');
+          window.localStorage.removeItem('token');
+          window.localStorage.removeItem('userId');
+          Router.push('/');
+        } else {
+          alert('수정되었습니다.');
+          Router.push('/mypage');
         }
       });
   };
@@ -63,7 +85,9 @@ const ReviseUserInfo = () => {
           </td>
         </tr>
       </table>
-      <Button style={{ width: '200px' }}>수정</Button>
+      <Button type="primary" style={{ width: '200px' }} onClick={submitRevise}>
+        수정
+      </Button>
     </div>
   );
 };
