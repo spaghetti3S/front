@@ -8,32 +8,33 @@ const KakaoMap = ({ isbn }) => {
       .get(`http://localhost:4000/book/loan/${lib.libCode}/${isbn}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
-      .then((res) => {
-        let infowindow = '';
-        console.log(res.data);
-        if (
-          res.data.result.hasBook === 'N' ||
-          res.data.result.loanAvailable === 'N'
-        ) {
-          infowindow = new kakao.maps.InfoWindow({
-            content: `<div class="infowindow">
+      .then((res, err) => {
+        if (!err && res.data.result !== undefined) {
+          let infowindow = '';
+          if (
+            res.data.result.hasBook === 'N' ||
+            res.data.result.loanAvailable === 'N'
+          ) {
+            infowindow = new kakao.maps.InfoWindow({
+              content: `<div class="infowindow">
               <h4 id="name">${lib.libName}</h4>
               대출 불가
             </div>`,
-            removable: true,
-          });
-        } else {
-          infowindow = new kakao.maps.InfoWindow({
-            content: `<div class="infowindow">
+              removable: true,
+            });
+          } else {
+            infowindow = new kakao.maps.InfoWindow({
+              content: `<div class="infowindow">
               <h4 id="name">${lib.libName}</h4>
               대출 가능
             </div>`,
-            removable: true,
+              removable: true,
+            });
+          }
+          kakao.maps.event.addListener(marker, 'click', () => {
+            infowindow.open(map, marker);
           });
         }
-        kakao.maps.event.addListener(marker, 'click', () => {
-          infowindow.open(map, marker);
-        });
       });
   };
 
