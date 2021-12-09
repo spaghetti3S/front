@@ -15,7 +15,7 @@ const KakaoMap = ({ isbn }) => {
             res.data.result.hasBook === 'N' ||
             res.data.result.loanAvailable === 'N'
           ) {
-            infowindow = new kakao.maps.InfoWindow({
+            infowindow = new window.kakao.maps.InfoWindow({
               content: `<div class="infowindow">
               <h4 id="name">${lib.libName}</h4>
               대출 불가
@@ -24,7 +24,7 @@ const KakaoMap = ({ isbn }) => {
               removable: true,
             });
           } else {
-            infowindow = new kakao.maps.InfoWindow({
+            infowindow = new window.kakao.maps.InfoWindow({
               content: `<div class="infowindow">
               <h4 id="name">${lib.libName}</h4>
               대출 가능
@@ -33,7 +33,7 @@ const KakaoMap = ({ isbn }) => {
               removable: true,
             });
           }
-          kakao.maps.event.addListener(marker, 'click', () => {
+          window.kakao.maps.event.addListener(marker, 'click', () => {
             infowindow.open(map, marker);
           });
         }
@@ -51,8 +51,11 @@ const KakaoMap = ({ isbn }) => {
         const libraryListInfo = res.data;
         // 마커 생성
         libraryListInfo.map((lib, index) => {
-          const latlng = new kakao.maps.LatLng(lib.latitude, lib.longitude);
-          const marker = new kakao.maps.Marker({
+          const latlng = new window.kakao.maps.LatLng(
+            lib.latitude,
+            lib.longitude
+          );
+          const marker = new window.kakao.maps.Marker({
             map: map,
             position: latlng,
             title: lib.libName,

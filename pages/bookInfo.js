@@ -13,7 +13,6 @@ import BookInfoButton from '../components/BookInfoButton';
 const BookInfo = () => {
   const [book, setBook] = useState();
   const [libraryBookInfo, setlibraryBookInfo] = useState();
-  const [writer, setWriter] = useState('');
 
   // 검색 키워드 URL 에서 가져옴
   const router = useRouter();
