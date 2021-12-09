@@ -60,16 +60,6 @@ const KakaoMap = ({ isbn }) => {
             position: latlng,
             title: lib.libName,
           });
-          // kakao.maps.event.addListener(
-          //   marker,
-          //   'mouseover',
-          //   makeOverListener(map, marker, infowindow)
-          // );
-          // kakao.maps.event.addListener(
-          //   marker,
-          //   'mouseout',
-          //   makeOutListener(infowindow)
-          // );
 
           createInfowindow(lib, map, marker);
 
