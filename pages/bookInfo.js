@@ -20,16 +20,19 @@ const BookInfo = () => {
   // 책정보 api
   const getBooksInfo = async (isbn) => {
     await axios
-      .get(`http://${BACK_END_URL}/book/search/isbn?keyword=${isbn}`, {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-      })
+      .get(
+        `http://${process.env.BACK_END_URL}/book/search/isbn?keyword=${isbn}`,
+        {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        }
+      )
       .then((res) => {
         setBook(res.data.item[0]);
       });
   };
   const getBooksInfoLibrary = async () => {
     await axios
-      .get(`http://${BACK_END_URL}/book/library/${link.isbn}`, {
+      .get(`http://${process.env.BACK_END_URL}/book/library/${link.isbn}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {

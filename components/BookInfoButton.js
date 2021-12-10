@@ -10,7 +10,7 @@ const BookInfoButton = ({ isbn }) => {
 
   const getClickedInfo = async (code) => {
     await axios
-      .post(`http://${BACK_END_URL}/book/getState`, {
+      .post(`http://${process.env.BACK_END_URL}/book/getState`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         book: code,
         token: localStorage.getItem('token'),

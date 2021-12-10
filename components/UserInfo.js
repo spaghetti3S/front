@@ -6,7 +6,7 @@ const UserInfo = () => {
   const [user, setUser] = useState({});
   const getUserInfo = () => {
     axios
-      .post(`http://${BACK_END_URL}/user/info`, {
+      .post(`http://${process.env.BACK_END_URL}/user/info`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         token: window.localStorage.getItem('token'),
       })

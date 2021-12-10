@@ -7,7 +7,7 @@ const NewBooks = ({ title, code }) => {
   const [bookList, setBookList] = useState([]);
   const getNewBooks = async () => {
     await axios
-      .get(`http://${BACK_END_URL}/books/newBooks/${code}`, {
+      .get(`http://${process.env.BACK_END_URL}/books/newBooks/${code}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {

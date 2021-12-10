@@ -7,7 +7,7 @@ const BookRelevenceList = ({ code }) => {
   const [books, setBooks] = useState([]);
   const getRelevence = async (isbn) => {
     await axios
-      .get(`http://${BACK_END_URL}/books/relevence/${isbn}`, {
+      .get(`http://${process.env.BACK_END_URL}/books/relevence/${isbn}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {

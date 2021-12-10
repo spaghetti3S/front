@@ -9,7 +9,7 @@ import {
 
 function loginUserAPI(inputInfo) {
   return axios
-    .post(`http://${BACK_END_URL}/user/login`, {
+    .post(`http://${process.env.BACK_END_URL}/user/login`, {
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       info: val,
     })

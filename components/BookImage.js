@@ -10,9 +10,12 @@ const BookImage = ({ isbn, state }) => {
   // 검색 키워드 URL 에서 가져옴
   const getBookImage = async (code) => {
     await axios
-      .get(`http://${BACK_END_URL}/book/search/isbn?keyword=${code}`, {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-      })
+      .get(
+        `http://${process.env.BACK_END_URL}/book/search/isbn?keyword=${code}`,
+        {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+        }
+      )
       .then((res, err) => {
         if (err || res.data.item[0] === undefined) {
           setBookImg('http://image.yes24.com/goods/102347474/XL');
