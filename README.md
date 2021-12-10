@@ -15,7 +15,7 @@
 # 의존성 (dependency)
 1. node.js 16.x
 2. npm 7.x
-기타 라이브러리
+3. 기타 라이브러리
 <code>
   
     "@ant-design/icons": "^4.7.0"
