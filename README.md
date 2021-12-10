@@ -17,24 +17,42 @@
 2. npm 7.x
 기타 라이브러리
 <code>
-    "@ant-design/icons": "^4.7.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "antd": "^4.16.13",
-    "axios": "^0.21.4",
-    "dotenv": "^10.0.0",
-    "jsonwebtoken": "^8.5.1",
-    "next": "^11.1.2",
-    "next-redux-wrapper": "^7.0.5",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.5",
-    "react-scripts": "4.0.3",
-    "redux": "^4.1.1",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-saga": "^1.1.3",
+    "@ant-design/icons": "^4.7.0"
+  
+    "@testing-library/jest-dom": "^5.14.1"
+  
+    "@testing-library/react": "^11.2.7"
+  
+    "@testing-library/user-event": "^12.8.3"
+  
+    "antd": "^4.16.13"
+  
+    "axios": "^0.21.4"
+  
+    "dotenv": "^10.0.0"
+  
+    "jsonwebtoken": "^8.5.1"
+  
+    "next": "^11.1.2"
+  
+    "next-redux-wrapper": "^7.0.5"
+  
+    "prop-types": "^15.7.2"
+  
+    "react": "^17.0.2"
+  
+    "react-dom": "^17.0.2"
+  
+    "react-redux": "^7.2.5"
+  
+    "react-scripts": "4.0.3"
+  
+    "redux": "^4.1.1"
+  
+    "redux-devtools-extension": "^2.13.9"
+  
+    "redux-saga": "^1.1.3"
+  
     "web-vitals": "^1.1.2"
 </code>
 
