@@ -8,7 +8,7 @@ import axios from 'axios';
 const LoginForm = () => {
   const loginReq = async (val) => {
     await axios
-      .post(`http://${process.env.BACK_END_URL}/user/login`, {
+      .post(`http://15.165.57.229:8080/user/login`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         info: val,
       })

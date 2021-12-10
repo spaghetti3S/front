@@ -9,7 +9,7 @@ const BookList = ({ code }) => {
   // .data.item -> Array 반환
   const getBestseller = async () => {
     await axios
-      .get(`http://${process.env.BACK_END_URL}/books/bestseller/${code}`, {
+      .get(`http://15.165.57.229:8080/books/bestseller/${code}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {

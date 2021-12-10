@@ -10,7 +10,7 @@ const BookInfoButton = ({ isbn }) => {
 
   const getClickedInfo = async (code) => {
     await axios
-      .post(`http://${process.env.BACK_END_URL}/book/getState`, {
+      .post(`http://15.165.57.229:8080/book/getState`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         book: code,
         token: localStorage.getItem('token'),
@@ -56,7 +56,7 @@ const BookInfoButton = ({ isbn }) => {
         }
       }
       await axios
-        .post(`http://${BACK_END_URL}/book/changeState`, {
+        .post(`http://15.165.57.229:8080/book/changeState`, {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
           book: code,
           token: localStorage.getItem('token'),
