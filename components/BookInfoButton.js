@@ -41,17 +41,21 @@ const BookInfoButton = ({ isbn }) => {
       if (typeReq === 'interest') {
         if (!interest) {
           act = 'true';
+          alert('추가되었습니다.');
           setInterestCount(interestCount + 1);
         } else {
           act = 'false';
+          alert('삭제되었습니다.');
           setInterestCount(interestCount - 1);
         }
       } else if (typeReq === 'read') {
         if (!read) {
           act = 'true';
+          alert('추가되었습니다.');
           setReadCount(readCount + 1);
         } else {
           act = 'false';
+          alert('삭제되었습니다.');
           setReadCount(readCount - 1);
         }
       }

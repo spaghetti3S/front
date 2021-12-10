@@ -43,7 +43,7 @@ const KakaoMap = ({ isbn }) => {
   // 범위 내 도서관 정보 가져오기
   const getLibraryMark = async (bounds, map) => {
     await axios
-      .post(`http://${process.env.BACK_END_URL}/library/around`, {
+      .post(`http://15.165.57.229:8080/library/around`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         bound: bounds,
       })
