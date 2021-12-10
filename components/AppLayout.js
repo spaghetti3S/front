@@ -19,33 +19,40 @@ const AppLayout = ({ children }) => {
   return (
     <Layout>
       <Header>
-        <Link href="/">
-          <a href="{() => false}">홈이동</a>
-        </Link>
-        {typeof window !== 'undefined' && window.localStorage.getItem('token') && (
-          <>
-            <a onClick={logoutReq} style={{ marginLeft: '20px' }}>
-              로그아웃
-            </a>
-            <Link href="/mypage">
-              <a style={{ margin: '20px' }} href="{() => false}">
-                마이페이지
-              </a>
-            </Link>
-          </>
-        )}
-        {typeof window !== 'undefined' &&
-          !window.localStorage.getItem('token') && (
-            <Link href="/login">
-              <a style={{ margin: '20px' }} href="{() => false}">
-                로그인
-              </a>
-            </Link>
-          )}
+        <div id="header">
+          <Link href="/">
+            <a href="{() => false}">홈이동</a>
+          </Link>
+          {typeof window !== 'undefined' &&
+            window.localStorage.getItem('token') && (
+              <>
+                <a onClick={logoutReq} style={{ marginLeft: '20px' }}>
+                  로그아웃
+                </a>
+                <Link href="/mypage">
+                  <a style={{ margin: '20px' }} href="{() => false}">
+                    마이페이지
+                  </a>
+                </Link>
+              </>
+            )}
+          {typeof window !== 'undefined' &&
+            !window.localStorage.getItem('token') && (
+              <Link href="/login">
+                <a style={{ margin: '20px' }} href="{() => false}">
+                  로그인
+                </a>
+              </Link>
+            )}
+        </div>
       </Header>
       <Content style={{ backgroundColor: 'white' }}>
-        <SearchBar />
-        <div className="content">{children}</div>
+        <div id="searchBar">
+          <SearchBar />
+        </div>
+        <div className="content" style={{ marginTop: '90px' }}>
+          {children}
+        </div>
       </Content>
       <Footer></Footer>
     </Layout>
