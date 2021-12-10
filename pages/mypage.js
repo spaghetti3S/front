@@ -11,7 +11,9 @@ const mypage = () => {
       <div id="mypage">
         <div id="mypageWrapper">
           <UserInfo />
-          <Button style={{ width: '200px' }}>정보수정</Button>
+          <Link href="/revise">
+            <Button style={{ width: '200px' }}>정보수정</Button>
+          </Link>
           <Link href="/list?type=interest">
             <Button style={{ width: '200px' }}>관심책</Button>
           </Link>

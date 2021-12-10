@@ -14,10 +14,11 @@ const BookImage = ({ isbn, state }) => {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res, err) => {
-        if (err) {
+        if (err || res.data.item[0] === undefined) {
           setBookImg('http://image.yes24.com/goods/102347474/XL');
+        } else {
+          setBookImg(res.data.item[0].coverLargeUrl);
         }
-        setBookImg(res.data.item[0].coverLargeUrl);
       });
   };
 

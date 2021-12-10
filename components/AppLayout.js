@@ -47,7 +47,7 @@ const AppLayout = ({ children }) => {
         <SearchBar />
         <div className="content">{children}</div>
       </Content>
-      <Footer>Footer</Footer>
+      <Footer></Footer>
     </Layout>
   );
 };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HeartTwoTone, CheckSquareTwoTone } from '@ant-design/icons';
 
 const BookInfoButton = ({ isbn }) => {
@@ -84,7 +84,7 @@ const BookInfoButton = ({ isbn }) => {
     setRead(!read);
   };
 
-  useState(() => {
+  useEffect(() => {
     if (
       window.localStorage.getItem('userId') &&
       window.localStorage.getItem('token')
