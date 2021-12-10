@@ -10,7 +10,7 @@ const ReviseUserInfo = () => {
 
   const getUserInfo = async () => {
     await axios
-      .post(`http://localhost:4000/user/info`, {
+      .post(`http://${BACK_END_URL}/user/info`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         token: window.localStorage.getItem('token'),
       })
@@ -30,7 +30,7 @@ const ReviseUserInfo = () => {
 
   const submitRevise = async () => {
     await axios
-      .post(`http://localhost:4000/user/revise`, {
+      .post(`http://${BACK_END_URL}/user/revise`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         token: window.localStorage.getItem('token'),
         userId: window.localStorage.getItem('userId'),

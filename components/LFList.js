@@ -15,7 +15,7 @@ const LFList = () => {
   const getList = async () => {
     if (link.type) {
       await axios
-        .post(`http://localhost:4000/user/book/`, {
+        .post(`http://${BACK_END_URL}/user/book/`, {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
           token: window.localStorage.getItem('token'),
           state: link.type,

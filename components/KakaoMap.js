@@ -5,7 +5,7 @@ const KakaoMap = ({ isbn }) => {
   // 인포 윈도우
   const createInfowindow = async (lib, map, marker) => {
     await axios
-      .get(`http://localhost:4000/book/loan/${lib.libCode}/${isbn}`, {
+      .get(`http://${BACK_END_URL}/book/loan/${lib.libCode}/${isbn}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res, err) => {
@@ -43,7 +43,7 @@ const KakaoMap = ({ isbn }) => {
   // 범위 내 도서관 정보 가져오기
   const getLibraryMark = async (bounds, map) => {
     await axios
-      .post(`http://localhost:4000/library/around`, {
+      .post(`http://${BACK_END_URL}/library/around`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         bound: bounds,
       })

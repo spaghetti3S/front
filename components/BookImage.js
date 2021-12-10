@@ -10,7 +10,7 @@ const BookImage = ({ isbn, state }) => {
   // 검색 키워드 URL 에서 가져옴
   const getBookImage = async (code) => {
     await axios
-      .get(`http://localhost:4000/book/search/isbn?keyword=${code}`, {
+      .get(`http://${BACK_END_URL}/book/search/isbn?keyword=${code}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res, err) => {

@@ -9,7 +9,7 @@ import {
 
 function loadBooksAPI(keyword) {
   return axios.get(
-    `http://localhost:4000/book/search/title?keyword=${keyword}`,
+    `http://${BACK_END_URL}/book/search/title?keyword=${keyword}`,
     {
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
     }
