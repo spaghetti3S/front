@@ -9,7 +9,7 @@ const RegisterForm = () => {
       alert('비밀번호가 일치하지 않습니다.');
     } else {
       await axios
-        .post(`http://localhost:4000/user/register`, {
+        .post(`http://15.165.57.229:8080/user/register`, {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
           info: val,
         })

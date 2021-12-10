@@ -8,7 +8,7 @@ import {
 } from '../actions/searchBooks';
 
 function loadBooksAPI(kdc) {
-  return axios.get(`http://localhost:4000/books/${kdc}`, {
+  return axios.get(`http://15.165.57.229:8080/books/${kdc}`, {
     'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
   });
 }

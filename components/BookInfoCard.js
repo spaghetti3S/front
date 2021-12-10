@@ -11,7 +11,7 @@ const BookInfoCard = ({ book, type }) => {
 
   const getBooksInfo = async (isbn) => {
     await axios
-      .get(`http://localhost:4000/book/${isbn}`, {
+      .get(`http://15.165.57.229:8080/book/${isbn}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {

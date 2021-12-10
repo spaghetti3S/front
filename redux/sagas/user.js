@@ -9,7 +9,7 @@ import {
 
 function loginUserAPI(inputInfo) {
   return axios
-    .post(`http://localhost:4000/user/login`, {
+    .post(`http://15.165.57.229:8080/user/login`, {
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       info: val,
     })

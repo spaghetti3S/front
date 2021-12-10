@@ -10,7 +10,7 @@ const BookInfoButton = ({ isbn }) => {
 
   const getClickedInfo = async (code) => {
     await axios
-      .post(`http://localhost:4000/book/getState`, {
+      .post(`http://15.165.57.229:8080/book/getState`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
         book: code,
         token: localStorage.getItem('token'),
@@ -41,22 +41,26 @@ const BookInfoButton = ({ isbn }) => {
       if (typeReq === 'interest') {
         if (!interest) {
           act = 'true';
+          alert('추가되었습니다.');
           setInterestCount(interestCount + 1);
         } else {
           act = 'false';
+          alert('삭제되었습니다.');
           setInterestCount(interestCount - 1);
         }
       } else if (typeReq === 'read') {
         if (!read) {
           act = 'true';
+          alert('추가되었습니다.');
           setReadCount(readCount + 1);
         } else {
           act = 'false';
+          alert('삭제되었습니다.');
           setReadCount(readCount - 1);
         }
       }
       await axios
-        .post(`http://localhost:4000/book/changeState`, {
+        .post(`http://15.165.57.229:8080/book/changeState`, {
           'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
           book: code,
           token: localStorage.getItem('token'),

@@ -173,3 +173,16 @@ table#userInfoTable {
   display: flex;
   flex-flow: wrap;
 }
+
+.ant-layout-header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+#searchBar {
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  z-index: 10;
+}

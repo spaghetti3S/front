@@ -13,7 +13,6 @@ import BookInfoButton from '../components/BookInfoButton';
 const BookInfo = () => {
   const [book, setBook] = useState();
   const [libraryBookInfo, setlibraryBookInfo] = useState();
-  const [writer, setWriter] = useState('');
 
   // 검색 키워드 URL 에서 가져옴
   const router = useRouter();
@@ -21,7 +20,7 @@ const BookInfo = () => {
   // 책정보 api
   const getBooksInfo = async (isbn) => {
     await axios
-      .get(`http://localhost:4000/book/search/isbn?keyword=${isbn}`, {
+      .get(`http://15.165.57.229:8080/book/search/isbn?keyword=${isbn}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {
@@ -30,7 +29,7 @@ const BookInfo = () => {
   };
   const getBooksInfoLibrary = async () => {
     await axios
-      .get(`http://localhost:4000/book/library/${link.isbn}`, {
+      .get(`http://15.165.57.229:8080/book/library/${link.isbn}`, {
         'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       })
       .then((res) => {
